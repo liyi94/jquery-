@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>彩色图片变为黑白</title>
+	<style type="text/css">
+		body{
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			font: normal 10px Verdana, Arial, Helvetica, sans-serif;
+			background: #fff;
+			position: relative;
+		}
+		h1{
+			text-align: center;
+			font-weight: normal;
+			font-size: 2.5em;
+		}
+		img{
+			border: none;
+		}
+		ul.gallery{
+			width: 708px;
+			list-style: none;
+			margin: 0 auto;
+			padding: 0;
+		}
+		ul.gallery li{
+			float: left;
+			margin: 10px; padding: 0;
+			text-align: center;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+			display: inline;
+		}
+		ul.gallery li a.thumb{
+			width: 204px;
+			height: 182px;
+			padding: 5px;
+			border-bottom: 1px solid #ccc;
+			cursor: pointer;
+		}
+		ul.gallery li span{
+			width: 204px;
+			height: 182px;
+			overflow: hidden;
+			display: block;
+		}
+		ul.gallery li a.thumb:hover{
+			background: #333;
+		}
+		ul.gallery li h2{
+			font-size: 1em;
+			font-weight: normal;
+			text-transform: uppercase;
+			margin: 0;
+			padding: 10px;
+			background: #f0f0f0;
+			border-top: 1px solid #fff;
+		}
+		ul.gallery li a{
+			text-decoration: none;
+			color: #777;
+			display: block;
+		}
+	</style>
+	<script type="text/javascript" src="../jquery-1.9.1.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("ul.gallery li").hover(function(){
+				var thumbOver = $(this).find("img").attr("src");
+				$(this).find("a.thumb").css({'background' : 'url(' + thumbOver + ') no-repeat center bottom'});
+				$(this).find("span").stop().animate({opacity: 0}, 300);
+			},function(){
+				$(this).find("span").stop().animate({opacity: 1}, 300);
+			});
+		});
+	</script>
+</head>
+
+<body>
+	<h1>
+		<a href="###" style="color: #333; text-decoration: none;">彩色图片变为黑白</a>
+	</h1>
+	<ul class="gallery">
+		<li>
+			<a href="###" class="thumb"><span><img src="sushiandrobots_thumb.gif" alt="" /></span></a>
+			<h2><a href="###">Sushi &amp; Robots</a></h2>
+		</li>
+		<li>
+			<a href="###" class="thumb"><span><img src="garysreallife_thumb.gif" alt="" /></span></a>
+			<h2><a href="###">Gary's Life</a></h2>
+		</li>
+		<li>
+			<a href="###" class="thumb"><span><img src="cubescripts_thumb.gif" alt="" /></span></a>
+			<h2><a href="###">Cube Scripts</a></h2>
+		</li>
+		<li>
+			<a href="###" class="thumb"><span><img src="ryankeiser_thumb.gif" alt="" /></span></a>
+			<h2><a href="###">Ryan Keiser</a></h2>
+		</li>
+		<li>
+			<a href="###" class="thumb"><span><img src="ricardogimenes_thumb.gif" alt="" /></span></a>
+			<h2><a href="###">Ricardo Gimenes</a></h2>
+		</li>
+		<li>
+			<a href="###" class="thumb"><span><img src="foodtease_thumb.gif" alt="" /></span></a>
+			<h2><a href="###">Food Tease</a></h2>
+		</li>
+	</ul>
+</body>
+</html>
